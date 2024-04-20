@@ -1,11 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import CodeEditor from '@uiw/react-textarea-code-editor'
 import colors from 'tailwindcss/colors'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts'
+// @ts-ignore
+import prettify from 'prettify-js'
 
-const data = [
+const defaultData = [
 	{
 		month: 'Janeiro',
 		uv: 4000,
@@ -35,22 +37,21 @@ const data = [
 		uv: 1890,
 		pv: 4800,
 		amt: 2181,
-	},
-	{
-		month: 'Junho',
-		uv: 2390,
-		pv: 3800,
-		amt: 2500
 	}
 ]
 
 export function RechartLine() {
+	const [data, setData] = useState(prettify(defaultData))
+	const [isWrongValue, setIsWrongValue] = useState(false)
+
 	return (
 		<div className="flex flex-wrap gap-4">
-			<div className="w-fit h-fit">
+			<div className="w-fit h-fit flex flex-col gap-3">
+				<h1 className="font-semibold text-md">Line</h1>
+
 				<ResponsiveContainer width={500} height={400}>
 					<LineChart
-						data={data}
+						data={JSON.parse(data)}
 						margin={{
 							top: 20,
 							right: 30,
@@ -111,17 +112,35 @@ export function RechartLine() {
 				</ResponsiveContainer>
 			</div>
 
-			<CodeEditor
-				value={`<LineChart\n	data={data}\n	margin={{\n		top: 20,\n		right: 30,\n		left: 16,\n		bottom: 10\n	}}\n>\n	<CartesianGrid strokeDasharray="3 3" />\n\n	<XAxis \n		dataKey="month"\n		tickSize={10}\n	>\n		{/* <Label value="Months" offset={8} position="bottom" /> */}\n	</XAxis>\n\n	<YAxis>\n		<Label value="Quant." offset={8} position="left" angle={-90} />\n	</YAxis>\n\n	<Tooltip \n		cursor={{ \n			stroke: colors.white, \n			strokeWidth: 2 \n		}}\n		contentStyle={{ \n			backgroundColor: colors.gray[800], \n			border: 0\n		}}\n		separator=" → "\n		labelClassName="text-gray-100" // Tooltip title, the same as X axix label\n	/>\n\n	<Legend \n		iconSize={18}\n		height={60}\n	/>\n\n	<Line\n		type="linear"\n		dataKey="pv"\n		stroke="#8884d8"\n		activeDot={{ r: 8 }} \n	/>\n	\n	<Line\n		type="monotone"\n		dataKey="uv"\n		stroke="#82ca9d"\n		activeDot={{ r: 4 }} \n	/>\n</LineChart>`}
-				language="ts"
-				padding={15}
-				disabled
-				className="w-[42rem]"
-				style={{
-					backgroundColor: colors.gray[800],
-					fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
-				}}
-			/>
+			<div className="flex flex-col">
+				<CodeEditor
+					value={data}
+					language="js"
+					padding={15}
+					onChange={e => {
+						setIsWrongValue(false)
+
+						try {
+							const parsed = JSON.parse(e.target.value)
+
+							const prettied = prettify(parsed)
+
+							setData(prettied)
+						} catch(e) {
+							setIsWrongValue(true)
+						}
+					}}
+					className="w-[42rem]"
+					style={{
+						backgroundColor: colors.gray[800],
+						fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+					}}
+				/>
+
+				{isWrongValue && (
+					<span className="bg-yellow-500 text-gray-800 text-sm p-3 rounded-md">Corrija a estrutura de dados.</span>
+				)}
+			</div>
 		</div>
 	)
 }
