@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@uiw/react-textarea-code-editor": "^3.0.2",
+    "apexcharts": "^3.49.1",
+    "classnames": "^2.5.1",
     "next": "14.2.1",
     "prettify-js": "^1.0.1",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
-    "recharts": "^2.12.5"
+    "recharts": "^2.12.5",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",

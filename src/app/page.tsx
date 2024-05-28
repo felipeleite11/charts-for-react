@@ -1,15 +1,17 @@
-import { RechartLine } from "./components/Rechart/Line"
-import { RechartBar } from "./components/Rechart/Bar"
+import Link from "next/link"
 
 export default function Home() {
 	return (
-		<main className="flex flex-col p-8 lg:p-16 gap-4">
-			<a target="_blank" href="https://recharts.org/" className="text-xl font-bold hover:text-sky-400 mb-8">Recharts</a>
-
-			<RechartLine />
+		<main className="flex flex-col p-8 lg:p-16 gap-8">
+			<Link href="/recharts" className="text-xl font-bold hover:text-sky-500 flex flex-col">
+				<h1>Recharts</h1>
+				<span className="text-sm font-normal">recharts.org</span>
+			</Link>
 			
-			<RechartBar />
-			
+			<Link href="/apex" className="text-xl font-bold hover:text-sky-500">
+				<h1>Apex Charts</h1>
+				<span className="text-sm font-normal">apexcharts.com</span>
+			</Link>
 		</main>
 	)
 }
