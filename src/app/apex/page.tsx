@@ -1,6 +1,8 @@
+import { ApexArea } from "@/components/Apex/Area"
 import { ApexBar } from "@/components/Apex/Bar"
 import { ApexLine } from "@/components/Apex/Line"
 import { ApexPie } from "@/components/Apex/Pie"
+import { ApexRadar } from "@/components/Apex/Radar"
 
 export default function Home() {
 	return (
@@ -12,6 +14,10 @@ export default function Home() {
 			<ApexBar />
 
 			<ApexPie />
+			
+			<ApexArea />
+
+			<ApexRadar />
 		</main>
 	)
 }
