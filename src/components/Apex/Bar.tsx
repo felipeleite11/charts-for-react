@@ -1,14 +1,34 @@
 'use client'
 
+import { useState } from 'react'
 import Apex from 'react-apexcharts'
 import colors from 'tailwindcss/colors'
+// @ts-ignore
+import prettify from 'prettify-js'
+
+import { CodeEditor } from '../CodeEditor'
 
 const months = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ']
 const fullMonths = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 const title = 'Bar'
 
+const defaultRandomData = [
+	{
+		name: 'O.S. abertas',
+		data: Array.from({ length: 12 }).map(() => Math.round(Math.random() * 100))
+	},
+	{
+		name: 'O.S. finalizadas',
+		data: Array.from({ length: 12 }).map(() => Math.round(Math.random() * 100))
+	}
+]
+
 export function ApexBar() {
+	const dataState = useState(prettify(defaultRandomData))
+	const [data] = dataState
+
 	return (
+		<div className="flex flex-wrap gap-4">
 		<div className="w-[40rem]">
 			<Apex
 				options={{
@@ -101,18 +121,14 @@ export function ApexBar() {
 						strokeDashArray: 2
 					}
 				}}
-				series={[
-					{
-						name: 'O.S. abertas',
-						data: Array.from({ length: 12 }).map(() => Math.round(Math.random() * 100))
-					},
-					{
-						name: 'O.S. finalizadas',
-						data: Array.from({ length: 12 }).map(() => Math.round(Math.random() * 100))
-					}
-				]}
+				series={JSON.parse(data)}
 				type="bar"
 			/>
+		</div>
+
+		<div className="mt-12">
+				<CodeEditor dataState={dataState} />
+			</div>
 		</div>
 	)
 }
