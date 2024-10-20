@@ -32,6 +32,10 @@ The application will be available at `http://localhost:3000`.
 
 Once the development server is running, you can view the different charts by each library opening the respective page.
 
+![apex](https://github.com/felipeleite11/charts-for-react/assets/54327441/50df43ef-9e61-418e-86ed-7c63d952c62d)
+
+![recharrt](https://github.com/felipeleite11/charts-for-react/assets/54327441/41a98fd5-e075-4658-b8ba-10bc98dae37c)
+
 #### Implemented Charts
 
 The project includes implementations of the following chart types:
