@@ -11,39 +11,33 @@ import { CodeEditor } from '../CodeEditor'
 const defaultRandomData = [
 	{
 		subject: 'Math',
-		A: 120,
-		B: 110,
-		fullMark: 150,
+		Juan: 120,
+		Mike: 110,
 	},
 	{
 		subject: 'Chinese',
-		A: 98,
-		B: 130,
-		fullMark: 150,
+		Juan: 98,
+		Mike: 130,
 	},
 	{
 		subject: 'English',
-		A: 86,
-		B: 130,
-		fullMark: 150,
+		Juan: 86,
+		Mike: 130,
 	},
 	{
 		subject: 'Geography',
-		A: 99,
-		B: 100,
-		fullMark: 150,
+		Juan: 99,
+		Mike: 100,
 	},
 	{
 		subject: 'Physics',
-		A: 85,
-		B: 90,
-		fullMark: 150,
+		Juan: 85,
+		Mike: 90,
 	},
 	{
 		subject: 'History',
-		A: 65,
-		B: 85,
-		fullMark: 150,
+		Juan: 65,
+		Mike: 85,
 	}
 ]
 
@@ -54,8 +48,6 @@ export function RechartRadar() {
 	return (
 		<div className="flex flex-wrap gap-4">
 			<div className="w-[40%] h-[60vh] flex flex-col gap-3">
-				<h1 className="font-semibold text-md">Radar</h1>
-
 				<ResponsiveContainer>
 					<RadarChart
 						data={JSON.parse(data)}
@@ -68,8 +60,8 @@ export function RechartRadar() {
 							wrapperStyle={{ fontSize: 13 }}
 						/>
 
-						<Radar name="Juan" dataKey="B" stroke={colors.emerald[500]} strokeWidth={2} fill={colors.emerald[400]} fillOpacity={0.6} opacity={0.6} />
-						<Radar name="Mike" dataKey="A" stroke={colors.sky[400]} fill={colors.sky[500]} fillOpacity={0.6} strokeWidth={2} opacity={0.6} />
+						<Radar name="Mike" dataKey="Mike" stroke={colors.emerald[500]} strokeWidth={2} fill={colors.emerald[400]} fillOpacity={0.6} opacity={0.6} />
+						<Radar name="Juan" dataKey="Juan" stroke={colors.sky[400]} fill={colors.sky[500]} fillOpacity={0.6} strokeWidth={2} opacity={0.6} />
 					</RadarChart>
 				</ResponsiveContainer>
 			</div>

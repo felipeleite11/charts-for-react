@@ -29,7 +29,7 @@ export function ApexBar() {
 
 	return (
 		<div className="flex flex-wrap gap-4">
-		<div className="w-[40rem]">
+		<div className="w-[40%]">
 			<Apex
 				options={{
 					chart: {

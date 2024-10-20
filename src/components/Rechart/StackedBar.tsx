@@ -47,8 +47,6 @@ export function RechartStackedBar() {
 	return (
 		<div className="flex flex-wrap gap-4">
 			<div className="w-[40%] h-[60vh] flex flex-col gap-3">
-				<h1 className="font-semibold text-md">Stacked Bar</h1>
-
 				<ResponsiveContainer>
 					<BarChart width={730} height={250} data={JSON.parse(data)}>
 						<CartesianGrid strokeDasharray="3 3" />

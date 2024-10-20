@@ -25,8 +25,6 @@ export function RechartPie() {
 	return (
 		<div className="flex flex-wrap gap-4">
 			<div className="w-[40%] h-[60vh] flex flex-col gap-3">
-				<h1 className="font-semibold text-md">Pie</h1>
-
 				<ResponsiveContainer>
 					<PieChart>
 						<Pie

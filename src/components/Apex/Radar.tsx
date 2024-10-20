@@ -13,7 +13,7 @@ const title = 'Radar'
 const defaultRandomData = [
 	{
 		name: 'Capabilities',
-		data: Array.from({ length: 5 }).map(() => Math.round(Math.random() * 100))
+		data: Array.from({ length: 5 }).map(() => Math.round(Math.random() * 20))
 	}
 ]
 
@@ -23,7 +23,7 @@ export function ApexRadar() {
 
 	return (
 		<div className="flex flex-wrap gap-4">
-			<div className="w-[40rem]">
+			<div className="w-[40%]">
 				<Apex
 					options={{
 						chart: {
@@ -59,9 +59,9 @@ export function ApexRadar() {
 							followCursor: true,
 							custom: ({ series, seriesIndex, dataPointIndex }) => {
 								return `
-								<div class="bg-gray-700 p-2 text-xs rounded-md border border-gray-600 shadow-md">
-									${series[seriesIndex][dataPointIndex]}
-								</div>`
+									<div class="bg-gray-700 p-2 text-xs rounded-md border border-gray-600 shadow-md">
+										${series[seriesIndex][dataPointIndex]}
+									</div>`
 							}
 						},
 						theme: {

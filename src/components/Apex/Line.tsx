@@ -15,11 +15,11 @@ const title = 'Line'
 const defaultRandomData = [
 	{
 		name: 'O.S. abertas',
-		data: Array.from({ length: 12 }).map(() => Math.round(Math.random() * 100))
+		data: Array.from({ length: 6 }).map(() => Math.round(Math.random() * 100))
 	},
 	{
 		name: 'O.S. finalizadas',
-		data: Array.from({ length: 12 }).map(() => Math.round(Math.random() * 100))
+		data: Array.from({ length: 6 }).map(() => Math.round(Math.random() * 100))
 	}
 ]
 
@@ -29,7 +29,7 @@ export function ApexLine() {
 
 	return (
 		<div className="flex flex-wrap gap-4">
-			<div className="w-[40rem]">
+			<div className="w-[40%]">
 				<Apex
 					options={{
 						chart: {

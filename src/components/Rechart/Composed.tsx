@@ -49,7 +49,6 @@ export function RechartComposed() {
 	return (
 		<div className="flex flex-wrap gap-4">
 			<div className="w-[40%] h-[60vh] flex flex-col gap-3">
-				<h1 className="font-semibold text-md">Composed</h1>
 				<h2 className="text-xs text-gray-400">Mix of line, bar and area chart, with customized tooltip.</h2>
 
 				<ResponsiveContainer>
