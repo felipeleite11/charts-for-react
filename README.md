@@ -3,7 +3,16 @@
 This repository implements essential charts of Apex and Recharts libs.
 
 #### Introduction
-Data visualization is a crucial aspect of data analysis and presentation. ApexCharts and Recharts are two libraries that provide robust tools for creating a wide range of charts and graphs. This project serves as a comprehensive guide to implementing various chart types using both libraries, making it easier for developers to choose the right tool for their needs.
+Data visualization is a crucial aspect of data analysis and presentation. This project serves as a comprehensive guide to implementing various chart types using several libraries, making it easier for developers to choose the right tool for their needs.
+
+#### Included libraries
+[Apex](https://apexcharts.com/docs)
+[Recharts](https://recharts.org)
+[ShadcnUI](https://ui.shadcn.com/charts)
+
+#### Under review for inclusion
+[Echarts](https://echarts.apache.org)
+[Nivo](https://nivo.rocks/line)
 
 #### Installation
 To run this project locally, follow these steps:
@@ -34,7 +43,9 @@ Once the development server is running, you can view the different charts by eac
 
 ![apex](https://github.com/felipeleite11/charts-for-react/assets/54327441/50df43ef-9e61-418e-86ed-7c63d952c62d)
 
-![recharrt](https://github.com/felipeleite11/charts-for-react/assets/54327441/41a98fd5-e075-4658-b8ba-10bc98dae37c)
+![rechart](https://github.com/felipeleite11/charts-for-react/assets/54327441/41a98fd5-e075-4658-b8ba-10bc98dae37c)
+
+![shadcnui/charts](https://github.com/felipeleite11/charts-for-react/assets/54327441/41a98fd5-e075-4658-b8ba-10bc98dae37c)
 
 #### Implemented Charts
 
